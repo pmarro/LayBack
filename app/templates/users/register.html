@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class = "registration">
+    <p class = "Register"> REGISTER </p>
+    <form method="POST">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder = "Company name" required><br><br>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder = "Company email" required><br><br>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" placeholder = "Password" required><br><br>
+    
+    
+    <div class = your_team>
+     <p > YOUR TEAM </p>
+
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder = "Designer(s) company-email"><br><br>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder = "Users company-email" ><br><br>
+
+        <div class = "wrap">
+            <button class = "button" type = 'submit'> 
+                START
+            </button>
+            <div class = "shadow"> </div>
+        </div>
+    
+    </form>
+    </div>
+
+    {% if error  %}
+    
+        <h1>:(</h1>
+
+        <p style = 'color: tomato;'> {{error}}</p>
+    {% endif %}
+
+{% endblock %}
+
+{% block title %}
+LayBack
+{% endblock %}

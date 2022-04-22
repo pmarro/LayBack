@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<head>
+
+
+{% block title %}Design Elements{% endblock %}
+</head>
+
+
+<body>
+  {% block body %}
+
+  <div class = content>
+  <h1>Upload your</h1>
+    
+        {% for element in elements_pagination.items %}
+        
+           <h1><a href = "/elements/{{element.slug}}"> {{element.name}}</a></h1>
+        {% endfor %}
+  
+
+    <nav>
+
+      {% if elements_pagination.prev_num %}
+      <a href="{{ url_for('elements.design_elements', page=elements_pagination.prev_num) }}">Previous</a>
+      {% else%}
+      <span>  </span>
+      {% endif %}
+
+      <span>   |   </span>
+
+      {% if elements_pagination.next_num %}
+      <a href="{{ url_for('elements.design_elements', page=elements_pagination.next_num) }}">Next</a>
+      {% else%}
+      <a href="{{ url_for('design-guide.design_guide') }}">View Yor Design Guide</a>
+      {% endif %}
+    </nav>
+
+  </div>
+
+    {% endblock %}
+</body>
+
+
