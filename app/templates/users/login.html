@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    <div class = 'login'>
+        <p class = "login_title"> LOGIN </p>
+        <form method="POST">
+    
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Company email" required><br><br>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+            
+            <div class = "wrap">
+            <button class = "button" type = 'submit'> 
+                LOGIN
+            </button>
+            <div class = "shadow"> </div>
+        </form>  
+    </div>
+{% if error %}
+  <p style = 'color: tomato;'> {{error}}</p>
+{% endif %}
+
+{% endblock %}

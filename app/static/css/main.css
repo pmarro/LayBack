@@ -1,0 +1,491 @@
+@font-face {
+    font-family: Elisavaresearch;
+    src: url("/static/fonts/Elisavaresearch.otf") format("opentype");
+  }
+
+html{
+   
+    background-color: rgb(22, 43, 230);
+    background-position: 0px 0px;
+    background-image: linear-gradient(to bottom, 
+    rgb(22, 43, 230) 0px,     /* Have one solid white area */
+    rgb(22, 43, 230) 355px,   /* at the top (255px high). */
+    rgb(0, 17, 167),   /* Then begin the gradient at 255px */
+    rgb(0, 15, 125) 100%     /* and end it at 100% (= body's height). */
+);  
+    font-family: Helvetica, Arial;
+    color:aliceblue
+}
+
+a{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}   
+
+
+*::selection{
+    color: rgb(58, 199, 58)
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(22, 43, 230) inset !important;
+    
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: rgb(223, 223, 223) !important;
+}
+
+button{
+    min-width: 90px;
+    min-height: 35px;
+    border-radius: 0px;
+    color: white;
+    border: none;
+    font-family: Elisavaresearch;
+}
+
+.header{
+
+    padding: 20px;
+    padding-top: 30px;
+    height: 40px;
+    display: flex;
+    margin-left: 115px;
+}
+
+
+.title a {
+    font-family: Elisavaresearch;   
+    font-size: 22px;
+    color: white;
+    position: relative;
+    top: 8px;
+}   
+
+.header .sign_in a{
+    background-color: rgb(22, 43, 230);
+}
+
+.sign_in a{
+    position: absolute;
+    text-align: center;
+    text-justify: center;
+    font-family:  Helvetica, sans-serif;   
+    font-size: 14px;
+    color: white;
+    right: 140px;
+    background-color: rgb(0, 16, 139);
+    border:1px solid rgb(223, 223, 223);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    min-width: 78px;
+    min-height: 23px;
+
+
+}
+
+.sign_in .shadow{
+    right: 140px;
+}
+
+.header button{
+    position: absolute;
+    right: 255px;
+    text-decoration: none;
+}
+
+.HP_title  {
+    font-family: Elisavaresearch;   
+    font-size: 20px;
+    color: white;
+    margin-left: 130px;
+    width: 30%;
+    
+}
+
+#big_title {
+
+    font-family: Elisavaresearch;   
+    font-size: 80px;
+    color: white;
+    font-weight: semi-bold;
+    display: block;
+    line-height : 80px;
+    
+}
+
+#design{
+
+    font-family: Elisavaresearch;   
+    font-size: 80px;
+    text-shadow:  -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);;
+    color: rgb(22, 43, 230);
+    width: 500px;
+    font-weight: semi-bold;
+    display: block;
+    margin-top: -85px;
+    margin-bottom: 0px;
+    
+}
+
+#design_element_title img{
+    position: absolute;
+    margin-top: -132px;
+    z-index: 1;
+    margin-left: 208px; 
+}
+
+#design_element_title #pen_tool img{
+    position: absolute;
+    margin-top: -125px;
+    z-index: 1;
+    margin-left: 277px; 
+}
+
+
+.text_body{
+    width: 400px;
+    margin-top: -35px;
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+.join_button button{
+    
+    border:1px white;
+    background-color: none; 
+    border: 1px white;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    background-color: black;    
+}
+
+
+.hp_activators{
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+
+.more_info_trigger a{
+    float: left;
+    display: inline ;
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+
+#background_sketch img{
+    z-index: 3;
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: 130px
+}
+
+/*-------------------Next Home Page Section--------------------------*/
+
+.infoblock{
+    margin-left: 130px;
+    margin-top: 180px;
+    display: flex;
+}
+
+.infoblock h2{
+    font-size: 40px;
+    width: 65%;
+    line-height: 44px;
+}
+
+.infoblock p{
+    font-size: 20px;
+    width: 75%;
+    line-height: 28px;
+    font-weight: lighter;
+}
+
+.infoblock .animated{
+    margin-right: 130px;
+    box-shadow: 1px 1px 10px rgb(16, 15, 34);
+    opacity: 0;
+    
+}
+
+.infoblock .sign_in a, .infoblock div .shadow {
+    margin-top: 10px;
+    right: 1800px;
+    left: 130px
+}
+
+.fadeInBottom {
+    
+    background-image: url("/static/images/tool.png");
+    background-size: 666.6px, 474px;
+    animation: fadeInBottom 1.8s both;
+    opacity: 100;
+
+}
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+/*--------------------Welcome Page-----------------------------------*/
+
+.welcome {
+    display: block;
+    position: relative;
+    width: 100vh;
+    margin: auto;
+    
+}
+
+.content{
+    position: relative;
+    align-content: center;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 5%;
+
+
+}
+
+.content .sign_in a{
+    margin-top: 10px;
+    background-color: rgb(22, 43, 230);
+
+}
+
+.content .sign_in .shadow{
+    margin-top: 10px;
+  
+
+}
+
+
+
+
+/*--------------------Elements Page-----------------------------------*/
+
+
+.content h1{
+    font-family: elisavaresearch;
+    font-size: 32px;
+}
+
+.element_form a{
+    margin-top: 10px;
+}
+
+
+.element_form{
+    position: relative;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+   
+    background-color: rgb(22, 43, 230);
+}
+
+.back{
+    margin-top: 20px;
+    
+}
+
+
+
+/*--------------------Register Page-----------------------------------*/
+.registration, .login {
+
+    position: absolute;
+    margin-left: 37%;
+    margin-top: 5%;
+    margin-right: 37%;
+}
+
+.registration p, .login_title{
+
+    font-family: Elisavaresearch;
+    color: rgb(223, 223, 223);
+    font-size: 22px;
+    position: relative;
+    margin-top: 5px;
+}
+
+
+.your_team{
+
+    margin-top: 30px;
+    position: relative;
+    top: 5px;
+}
+
+.form{
+
+    font-size: 14px;
+    margin-left: -7px; 
+}
+
+form input{
+
+    border: none;
+    color: rgb(223, 223, 223);
+    border-bottom: 1px solid rgb(223, 223, 223) ;
+    background-color: rgb(22, 43, 230);
+    width: 347px;
+    padding: 8px;
+}
+
+::placeholder{
+
+    color: rgb(223, 223, 223);
+}
+
+.wrap{
+    margin-top: 15%;
+    margin-left: 75%;
+    display: flex;
+    
+}
+
+.shadow{
+    min-width: 90px;
+    min-height: 35px;
+    background-color: rgb(223, 223, 223);
+    border-radius: 0px;
+    transition: all 0.3s ease-in-out 0s;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+}
+
+.wrap button{
+   
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(223, 223, 223);
+    background-color: rgb(22, 43, 230);
+    border:1px solid rgb(223, 223, 223);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+}
+
+.wrap button:hover{
+    transform: translate(6px, -6px);
+    transition:  0.3s ease-out 0s;
+    
+}
+
+.sign_in a:hover{
+    transform: translate(6px, -6px);
+    transition:  0.3s ease-out 0s;
+    
+}
+
+.join_button button:hover{
+    transform: translate(0px, -6px);
+    transition:  0.3s ease-out 0s;
+    
+}
+
+
+/*--------------------Design Guide Page-----------------------------------*/
+
+.dg_content{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    
+}
+
+
+
+.DG_Title h1{
+    margin-top: -20px;
+    font-size: 40px;
+    text-align: center;
+    font-family: elisavaresearch;
+
+}
+
+.your_element>*{
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+        div.title{
+            font-size: 16;
+        }
+        div.registration p{
+            font-size: 16px;
+        }
+        
+        div.button{
+            min-width: 270px;
+            margin-left: 37%;
+        }
+        
+    }
+
+@media screen and (max-width: 1200px) {
+    #background_sketch{
+        display: none;
+    }
+    .HP_title  {
+        margin-left: 10%;
+        
+    }
+    .header a  {
+        margin-left: 10%;
+        
+    }
+}
+
+/*
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-portait-only {
+    @media (min-width: 600px) and (max-width: 899px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-tablet-landscape-only {
+    @media (min-width: 900px) and (max-width: 1199px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-desktop-only {
+    @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+  */
