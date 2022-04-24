@@ -354,7 +354,6 @@ form input{
     padding: 8px;
 }
 
-
 ::placeholder{
 
     color: rgb(223, 223, 223);
@@ -378,7 +377,6 @@ form input{
     z-index: -1;
 }
 
-
 .wrap button{
    
     font-family: Helvetica, sans-serif;
@@ -392,8 +390,6 @@ form input{
     position: relative;
 
 }
-
-
 
 .wrap button:hover{
     transform: translate(6px, -6px);
@@ -413,6 +409,30 @@ form input{
     
 }
 
+
+/*--------------------Design Guide Page-----------------------------------*/
+
+.dg_content{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    
+}
+
+
+
+.DG_Title h1{
+    margin-top: -20px;
+    font-size: 40px;
+    text-align: center;
+    font-family: elisavaresearch;
+
+}
+
+.your_element>*{
+    display: block;
+}
 
 @media screen and (max-width: 800px) {
         div.title{

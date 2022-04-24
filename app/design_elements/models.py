@@ -5,7 +5,7 @@ class Designelement(db.Model, CRUDMixin):
     slug = db.Column(db.String(80))
     name = db.Column(db.String(80))
     url = db.Column(db.String(2000))
-    
+
 class Logo(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key = True)
     buffer = db.Column(db.Text)

@@ -1,8 +1,8 @@
-"""desperated try to make the db work
+"""Nullable=True
 
-Revision ID: 686e97bf824a
+Revision ID: f20e82440262
 Revises: 8a4cf21b1874
-Create Date: 2022-04-21 18:26:44.154902
+Create Date: 2022-04-24 10:40:59.081980
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '686e97bf824a'
+revision = 'f20e82440262'
 down_revision = '8a4cf21b1874'
 branch_labels = None
 depends_on = None

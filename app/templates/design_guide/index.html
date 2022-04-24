@@ -10,27 +10,60 @@
 
 {% block body %}
 
+<div class = 'DG_Title'>
+      <h1>Your Design Guide</h1>
+</div>
+<div class = 'dg_content'>
+      
+      <div class = 'your_element'>
+            <b>Your Font</b>
+            <br>
+            <a href="path_to_file" download="company's_font">Download</a>
 
-<p>Your Logo</p>
-
-<a href="path_to_file" download="company's_logo">Download</a>
-
-<img src= "{{logos}}">
-
-<p>Your Color Palette</p>
-
-{% for color in colors %}
-
-<p>{{color.color1}}</p>
-<p>{{color.color2}}</p>
-<p>{{color.color3}}</p>
-<p>{{color.color4}}</p>
-<p>{{color.color5}}</p>
-<p>{{color.color6}}</p>
+            <img src= "{{fonts}}">
+      </div>
 
 
-{% endfor %}
+      <div class = 'your_element'>
+            <b>Your Logo</b>
+            <br>
+            <a href="path_to_file" download="company's_logo">Download</a>
 
-<p style="color: tomato;">{{error}}</p>
+            <img src= "{{logos}}">
+      </div>
 
+
+      <div class = 'your_element'>
+            <b>Your Color Palette</b>
+
+            {% for color in colors %}
+
+            <p>{{color.color1}}</p>
+            <p>{{color.color2}}</p>
+            <p>{{color.color3}}</p>
+            <p>{{color.color4}}</p>
+            <p>{{color.color5}}</p>
+            <p>{{color.color6}}</p>
+
+
+            {% endfor %}
+      </div>
+
+      <div class = 'your_element'>
+            <b>Your Key Words</b>
+
+            {% for keyword in keywords %}
+
+            <p>{{keyword.keyword1}}</p>
+            <p>{{keyword.keyword2}}</p>
+            <p>{{keyword.keyword3}}</p>
+            <p>{{keyword.keyword4}}</p>
+            <p>{{keyword.keyword5}}</p>
+            <p>{{keyword.keyword6}}</p>
+
+
+            {% endfor %}
+      </div>
+      <p style="color: tomato;">{{error}}</p>
+</div>
 {% endblock %}

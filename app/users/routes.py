@@ -47,6 +47,7 @@ def post_register():
         return render_template('design_elements/welcome.html')
     except Exception as error_message:
         error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
+        
         return render_template('users/register.html', error=error)
 
 
