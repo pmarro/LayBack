@@ -28,19 +28,26 @@ def element(slug):
 @blueprint.post('/elements/logo/upload')
 
 def upload_logo():
-  logo = request.files['Logo']
+  try:
+    logo = request.files['Logo']
 
-  if not logo:
-    return 'Something went Wrong :/', 400
+    if not logo:
+      raise Exception( 'Something went Wrong :/')
 
-  filename = secure_filename(logo.filename)
-  mimetype = logo.mimetype
-  buffer = Logo(buffer = logo.read(), mimetype = mimetype, name = filename)
-  buffer.save()
-  db.session.add(buffer)
-  db.session.commit()
+    filename = secure_filename(logo.filename)
+    mimetype = logo.mimetype
+    buffer = Logo(buffer = logo.read(), mimetype = mimetype, name = filename)
+    buffer.save()
+    db.session.add(buffer)
+    db.session.commit()
+    element = 'Logo'
+    success = f'Your {element} have been successfully uploaded'
+    return render_template('design_elements/show.html', element= element, success = success)
 
-  return send_file(buffer.buffer, mimetype= buffer.mimetype)  
+  except Exception as error_message:
+    element = 'Logo'
+    error = error_message or 'An error occurred while processing your Upload. Please avoid uploading the same logo more than once.'
+    return render_template('design_elements/show.html', element= element, error= error)
 
 @blueprint.post('/elements/font/upload')
 def upload_font():
@@ -53,7 +60,7 @@ def upload_font():
   mimetype = font.mimetype
   buffer = Font(buffer = font.read(), mimetype = mimetype, name = filename)
   db.session.add(buffer)
-
+  '''
   design_guide_element = DesignguideElement(
     font_id = buffer.id
     ) 
@@ -61,10 +68,11 @@ def upload_font():
   design_guide_element.save()
     
   db.session.add(design_guide_element)
-
+  '''
   db.session.commit()
-  
-  return "That's a beautiful font!", 200
+  element = 'Font'
+  success = f'Your {element} have been successfully uploaded'
+  return render_template('design_elements/show.html', element= element, success = success)
 
 @blueprint.post('/elements/color/upload')
 
@@ -81,7 +89,6 @@ def upload_color():
       error = 'Please upload at least 3 colors'
       return render_template('design_elements/show.html', error = error)
 
-
     color_palette = Color(
     color1 = request.form.get('color1'),
     color2 = color2,
@@ -94,7 +101,7 @@ def upload_color():
     color_palette.save()
 
     db.session.add(color_palette)
-    
+    '''
     design_guide_element = DesignguideElement(
       color_id = color_palette.id
     ) 
@@ -102,13 +109,14 @@ def upload_color():
     design_guide_element.save()
     
     db.session.add(design_guide_element)
-
+    '''
     db.session.commit()
 
     element = 'Color Palette'
     success = f'Your {element} have been successfully uploaded'
-    return redirect(url_for('elements.element', slug='color', success = success))
-  except Exception as error:
+    return render_template('design_elements/show.html', element= element, success = success)
+  except Exception as error_message:
+    error = error_message or 'An error occurred while processing your Upload.'
     return redirect(url_for('elements.element', slug='color', error= error))
 
 
@@ -122,13 +130,13 @@ def upload_keywords():
     keyword4 = request.form.get('keyword4')
     keyword5 = request.form.get('keyword5')
     keyword6 = request.form.get('keyword6')  
-    print(f'------------------------------------------------>{keyword1}')
+
     if not keyword1 and keyword2 and keyword3:
       raise Exception('Please upload at least 3 keywords')
 
 
     keywords = Keyword(
-    keyword1 = request.form.get('keyword1'),
+    keyword1 = keyword1,
     keyword2 = keyword2,
     keyword3 = keyword3,
     keyword4 = keyword4,
@@ -138,7 +146,7 @@ def upload_keywords():
 
     keywords.save()
     db.session.add(keywords)
-
+    '''
     design_guide_element = DesignguideElement(
       keyword_id = keywords.id
     
@@ -147,14 +155,12 @@ def upload_keywords():
 
     design_guide_element.save()
     
-
-
-    db.session.rollback()
+    '''
     db.session.commit()
 
     element = 'Keywords'
     success = f'Your {element} have been successfully uploaded'
-    return redirect(url_for('elements.element', slug='keywords', success = success))
+    return render_template('design_elements/show.html', element= element, success = success)
   except Exception as error_message:
     error = error_message or 'An error occurred while processing your Design Guide. Please make sure to enter valid data.'
     return redirect(url_for('elements.element', slug='keywords', error= error))

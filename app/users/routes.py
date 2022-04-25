@@ -35,7 +35,7 @@ def post_register():
         )
 
         designguide.save()
-
+        '''
         design_guide_element = DesignguideElement(
             design_guide_id = designguide.id
         ) 
@@ -43,6 +43,7 @@ def post_register():
         design_guide_element.save()
     
         db.session.rollback()
+        '''
         login_user(user)
         return render_template('design_elements/welcome.html')
     except Exception as error_message:
@@ -61,7 +62,7 @@ def post_login():
         user = User.query.filter_by(company_email = request.form.get('email')).first() 
         if not user:
             raise Exception ('This email address has not been registered yet')
-        elif check_password_hash(request.form.get('password'), user.password):
+        elif not check_password_hash(user.password, request.form.get('password')):
             raise Exception ('The password does not appear to be correct')
         login_user(user)
         return render_template('design_elements/welcome.html')

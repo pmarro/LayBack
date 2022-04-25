@@ -5,94 +5,94 @@
 
 
 {% block body %}
+<section id = 'homepage'>
+    <section class = 'HP_title'>
+        
+    <div id = 'big_title'>
+        <p>Let's Let Designers</p>
+    </div>
 
-<section class = 'HP_title'>
+    <div id = 'design'>
+        <p>Design</p>
+        <div id= 'design_element_title'>
+            <img src = 'static/Images/Title_DesignElement.png' alt = 'Design element' width = 70px>
+            <div id = 'pen_tool'>
+            <img src = 'static/Images/Pen_tool.png' alt = 'Pen tool' width="17px">
+            </div>
+        </div>
+    </div>
+
+    <div class = 'text_body'>
+        <p>Create your brands design guide and easily apply it to all your companies documents, presentations and covers.</p>
+
+
+    </div>
+
+        <div class = 'hp_activators'>
+
+            <div class = 'join_button'>
+                <button class = 'join_button'>
+                    <a href = '/register'> Join Now</a>
+                </button>
+            </div>
+
+            <div class = 'more_info_trigger'>
+                <a href = "#more_ifno" onclick="pageScroll()">
+                    + Info
+                </a>
+            </div>
+        </div>
+
+
+    <div id = 'background_sketch'>
+        <img src="/static/Images/Tool_Sketch.png" alt = "Tool Blueprint" width = 800px>
+    </div>
+
+
+    </section>
+
+    <section id="more_info" >
+
+    <div class = infoblock>
     
-  <div id = 'big_title'>
-      <p>Let's Let Designers</p>
-  </div>
-
-  <div id = 'design'>
-      <p>Design</p>
-      <div id= 'design_element_title'>
-          <img src = 'static/Images/Title_DesignElement.png' alt = 'Design element' width = 70px>
-          <div id = 'pen_tool'>
-          <img src = 'static/Images/Pen_tool.png' alt = 'Pen tool' width="17px">
-          </div>
-      </div>
-  </div>
-
-  <div class = 'text_body'>
-      <p>Create your brands design guide and easily apply it to all your companies documents, presentations and covers.</p>
-
-
-  </div>
-
-    <div class = 'hp_activators'>
-
-        <div class = 'join_button'>
-            <button class = 'join_button'>
-                <a href = '/register'> Join Now</a>
-            </button>
+    <div class = "Textblock">
+        <h2> Graphic Coherence never was this easy</h2>
+        <p>LAYBACK is a tool meant to let your company's design
+        team develop your brands Design Guidelines for the rest of your company to apply to their work, effortlessly.</p>
+        <div class = 'sign_in'>
+        <a href = '/login'> Sign In</a>
+        <div class = "shadow"> </div>
         </div>
-
-        <div class = 'more_info_trigger'>
-            <a href = "#more_ifno" onclick="pageScroll()">
-                + Info
-            </a>
+    </div>
+        <div class = "animated "> 
+        <img src=" /static/images/tool.png" alt = "LayBack Tool" width = 666.6px height= 474px >
         </div>
     </div>
 
 
-  <div id = 'background_sketch'>
-      <img src="/static/Images/Tool_Sketch.png" alt = "Tool Blueprint" width = 800px>
-  </div>
 
+    </section>
 
-</section>
+    <script>
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                document.querySelectorAll(".animated")[0].classList.add("fadeInBottom");
+            }
+        })
 
-<section id="more_info" >
-
-<div class = infoblock>
-  
-  <div class = "Textblock">
-    <h2> Graphic Coherence never was this easy</h2>
-    <p>LAYBACK is a tool meant to let your company's design
-     team develop your brands Design Guidelines for the rest of your company to apply to their work, effortlessly.</p>
-    <div class = 'sign_in'>
-      <a href = '/login'> Sign In</a>
-      <div class = "shadow"> </div>
-    </div>
-  </div>
-    <div class = "animated "> 
-     <img src=" /static/images/tool.png" alt = "LayBack Tool" width = 666.6px height= 474px >
-    </div>
-</div>
-
-
-
-</section>
-
-<script>
-    const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            document.querySelectorAll(".animated")[0].classList.add("fadeInBottom");
-        }
     })
 
-})
-
-observer.observe(document.querySelector(".infoblock"));
+    observer.observe(document.querySelector(".infoblock"));
 
 
-function pageScroll() {
-    window.scrollTo({
-        top: 700,
-        left: 0,
-        behavior: 'smooth'
-    });
-}
-</script>
-
+    function pageScroll() {
+        window.scrollTo({
+            top: 700,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+    </script>
+</section>
 {% endblock %}
