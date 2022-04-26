@@ -19,5 +19,5 @@ def design_guide():
     return render_template('design_guide/index.html', logos = pict, fonts = font, colors = colors, keywords = keywords)
   except:
     return render_template('design_guide/index.html',
-    error = 'An error occurred while processing your order. Please make sure to enter valid data.'
+    error = 'An error occurred while processing your Design Guide. Please make sure to enter valid data.'
     )

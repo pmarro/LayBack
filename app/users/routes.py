@@ -35,7 +35,7 @@ def post_register():
         )
 
         designguide.save()
-        '''
+        
         design_guide_element = DesignguideElement(
             design_guide_id = designguide.id
         ) 
@@ -43,7 +43,7 @@ def post_register():
         design_guide_element.save()
     
         db.session.rollback()
-        '''
+        
         login_user(user)
         return render_template('design_elements/welcome.html')
     except Exception as error_message:

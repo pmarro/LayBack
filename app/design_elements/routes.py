@@ -60,7 +60,7 @@ def upload_font():
   mimetype = font.mimetype
   buffer = Font(buffer = font.read(), mimetype = mimetype, name = filename)
   db.session.add(buffer)
-  '''
+  
   design_guide_element = DesignguideElement(
     font_id = buffer.id
     ) 
@@ -68,7 +68,7 @@ def upload_font():
   design_guide_element.save()
     
   db.session.add(design_guide_element)
-  '''
+  
   db.session.commit()
   element = 'Font'
   success = f'Your {element} have been successfully uploaded'
