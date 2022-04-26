@@ -296,6 +296,10 @@ button{
     font-size: 32px;
 }
 
+.content h1 a:hover{
+    text-decoration: underline;
+}
+
 .element_form a{
     margin-top: 10px;
 }
@@ -305,14 +309,14 @@ button{
     position: relative;
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
-   
     background-color: rgb(22, 43, 230);
 }
 
 .back{
     margin-top: 20px;
-    
 }
+
+
 
 
 

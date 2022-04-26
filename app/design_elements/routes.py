@@ -1,11 +1,10 @@
-from ast import keyword
 from flask import redirect, render_template, Blueprint, request, current_app, Response, send_file, url_for
 
-from app.design_guides.models import DesignguideElement
+from app.design_guides.models import Designguide
 from .models import Designelement, Logo, Font, Color, Keyword
 from werkzeug.utils import secure_filename
 from app.extensions.database import db
-from flask_login import login_required, login_user
+from flask_login import current_user, login_required, login_user
 blueprint = Blueprint('elements' , __name__)
 
 
@@ -36,7 +35,7 @@ def upload_logo():
 
     filename = secure_filename(logo.filename)
     mimetype = logo.mimetype
-    buffer = Logo(buffer = logo.read(), mimetype = mimetype, name = filename)
+    buffer = Logo(buffer = logo.read(), mimetype = mimetype, name = filename, designguide_id = current_user.id)
     buffer.save()
     db.session.add(buffer)
     db.session.commit()
@@ -58,21 +57,19 @@ def upload_font():
 
   filename = secure_filename(font.filename)
   mimetype = font.mimetype
-  buffer = Font(buffer = font.read(), mimetype = mimetype, name = filename)
+  buffer = Font(buffer = font.read(), mimetype = mimetype, name = filename, designguide_id = current_user.id)
   db.session.add(buffer)
   
-  design_guide_element = DesignguideElement(
-    font_id = buffer.id
-    ) 
-
-  design_guide_element.save()
-    
-  db.session.add(design_guide_element)
   
   db.session.commit()
   element = 'Font'
   success = f'Your {element} have been successfully uploaded'
   return render_template('design_elements/show.html', element= element, success = success)
+
+
+
+
+
 
 @blueprint.post('/elements/color/upload')
 
@@ -96,20 +93,14 @@ def upload_color():
     color4 = color4,
     color5 = color5,
     color6 = color6,
+    designguide_id = current_user.id
     )
     
     color_palette.save()
 
     db.session.add(color_palette)
-    '''
-    design_guide_element = DesignguideElement(
-      color_id = color_palette.id
-    ) 
-
-    design_guide_element.save()
     
-    db.session.add(design_guide_element)
-    '''
+
     db.session.commit()
 
     element = 'Color Palette'
@@ -141,21 +132,14 @@ def upload_keywords():
     keyword3 = keyword3,
     keyword4 = keyword4,
     keyword5 = keyword5,
-    keyword6 = keyword6
+    keyword6 = keyword6,
+    designguide_id = current_user.id
   )
 
     keywords.save()
     db.session.add(keywords)
-    '''
-    design_guide_element = DesignguideElement(
-      keyword_id = keywords.id
     
-
-    ) 
-
-    design_guide_element.save()
-    
-    '''
+   
     db.session.commit()
 
     element = 'Keywords'

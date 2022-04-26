@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, url_for
 from app.users.models import User
-from app.design_guides.models import Designguide, DesignguideElement
+from app.design_guides.models import Designguide #DesignguideElement
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user
 from app.extensions.database import db
@@ -35,7 +35,7 @@ def post_register():
         )
 
         designguide.save()
-        
+        '''
         design_guide_element = DesignguideElement(
             design_guide_id = designguide.id
         ) 
@@ -43,7 +43,7 @@ def post_register():
         design_guide_element.save()
     
         db.session.rollback()
-        
+        '''
         login_user(user)
         return render_template('design_elements/welcome.html')
     except Exception as error_message:

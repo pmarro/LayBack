@@ -1,6 +1,5 @@
 from app.app import create_app
 from app.design_elements.models import Designelement   
-from app.users.models import User
 from app.extensions.database import db
 
 app = create_app()
@@ -13,7 +12,7 @@ design_elements = {
     'logo' : { 'name' : 'Logo'},
     'font' : { 'name' : 'Font'},
     'color_pallete' : { 'name' : 'Color Palette' },
-    'keywords' : {'name' : 'Keywords'}
+    'keywords' : {'name' : 'Key Words'}
 
 }
 
