@@ -1,8 +1,8 @@
-"""Nullable IDs
+"""Unlock
 
-Revision ID: c79f5259b06b
-Revises: 8b2d5a08a9b4
-Create Date: 2022-04-25 23:03:53.882882
+Revision ID: f0a1e629b724
+Revises: 
+Create Date: 2022-04-26 09:57:40.107545
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'c79f5259b06b'
-down_revision = '8b2d5a08a9b4'
+revision = 'f0a1e629b724'
+down_revision = None
 branch_labels = None
 depends_on = None
 

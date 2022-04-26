@@ -14,7 +14,8 @@ def design_guide():
     font = Font.query.all()
     colors = Color.query.all()
     keywords = Keyword.query.all()
-    pict = send_file(logo[0].buffer, mimetype= logo[0].mimetype)
+    if logo:
+      pict = send_file(logo[0].buffer, mimetype= logo[0].mimetype)
       
     return render_template('design_guide/index.html', logos = pict, fonts = font, colors = colors, keywords = keywords)
   except:
