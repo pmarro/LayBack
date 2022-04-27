@@ -1,8 +1,8 @@
-"""Relate Elements table to DesignGuide
+"""empty message
 
-Revision ID: eea4932f3e16
+Revision ID: 5b824ae5912f
 Revises: 
-Create Date: 2022-04-26 18:37:43.034637
+Create Date: 2022-04-26 20:17:14.617243
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'eea4932f3e16'
+revision = '5b824ae5912f'
 down_revision = None
 branch_labels = None
 depends_on = None
