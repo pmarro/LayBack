@@ -17,7 +17,7 @@ def design_guide():
     pict = send_file(logo[0].buffer, mimetype= logo[0].mimetype)
       
     return render_template('design_guide/index.html', logos = pict, fonts = font, colors = colors, keywords = keywords)
-  '''except:
+  except:
     return render_template('design_guide/index.html',
     error = 'An error occurred while processing your Design Guide. Please make sure to enter valid data.'
-    )'''
+    )
