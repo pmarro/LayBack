@@ -14,11 +14,10 @@ def design_guide():
     font = Font.query.filter_by(designguide_id = current_user.id)
     colors = Color.query.filter_by(designguide_id = current_user.id)
     keywords = Keyword.query.filter_by(designguide_id = current_user.id)
-    if logo:
-      pict = send_file(logo[0].buffer, mimetype= logo[0].mimetype)
+    pict = send_file(logo[0].buffer, mimetype= logo[0].mimetype)
       
     return render_template('design_guide/index.html', logos = pict, fonts = font, colors = colors, keywords = keywords)
-  except:
+  '''except:
     return render_template('design_guide/index.html',
     error = 'An error occurred while processing your Design Guide. Please make sure to enter valid data.'
-    )
+    )'''
