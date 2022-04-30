@@ -16,12 +16,3 @@ class Designguide(db.Model, CRUDMixin):
     keyword = db.relationship('Keyword', backref = 'designguide', uselist = False, lazy = True)
 
 
-'''
-class DesignguideElement(db.Model, CRUDMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    font_id = db.Column(db.Integer, db.ForeignKey('font.id'), nullable = True)
-    design_guide_id = db.Column(db.Integer, db.ForeignKey('designguide.id'), nullable = True )
-    keyword_id = db.Column(db.Integer, db.ForeignKey('keyword.id'), nullable = True)
-    logo_id = db.Column(db.Integer, db.ForeignKey('logo.id'), nullable = True)
-    color_id = db.Column(db.Integer, db.ForeignKey('color.id'), nullable = True)
- '''

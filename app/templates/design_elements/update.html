@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Design Elements{% endblock %}
+
+<body>
+  {% block body %}
+
+<section class = element_form>
+
+ 
+
+{% if element == 'Logo' %}
+  <h1>Update your {{element}}</h1>
+    <form action = "/elements/update/logo" enctype="multipart/form-data" method="POST">
+        <input type= "file" name="Logo" onchange="form.submit()" accept=".png, .jpg">
+    </form>
+{% elif element == 'Font' %}
+  <h1>Update your {{element}}</h1>
+    <form action = "/elements/update/font" enctype="multipart/form-data" method="POST">
+        <input type= "file" name="Font" onchange="form.submit()" accept=".otf, .ttf, .fnt">
+    </form>
+
+{% elif element == 'Color Palette' %}
+<h1>Update your {{element}}</h1>  
+  <form action = "/elements/update/color_palette" method="POST">
+    {% for i in range(1, 7) %}
+      <label for="color{{i}}"></label>
+      <input type= "text" name="color{{i}}" id = 'color{{i}}' placeholder ='Color HEX Value {{i}}'><br><br>
+    {% endfor %}
+      <div class ="element_submit">
+        <input type= "submit" value="Submit" >
+      </div>
+  </form>
+
+
+{% elif element == 'Key Words' %}
+<h1>Update your {{element}}</h1>
+  <form action = "/elements/update/keywords"  method="POST">
+    {% for i in range(1, 7) %}
+      <label for="keyword{{i}}"></label>
+      <input type= "text" name="keyword{{i}}" id = 'keyword{{i}}' placeholder ='Key Word {{i}}'><br><br>
+    {% endfor %}
+      <div class ="element_submit">
+        <input type= "submit" value="Submit" onchange="form.submit()">
+      </div>
+  </form>
+
+
+
+{% else %}
+  {% if error %}
+  <p style = 'color: tomato;'>{{error}}</p>
+    
+  {% elif success %}
+  <p>{{success}}</p>
+  {% endif %}
+
+{% endif %}
+
+<div class = 'back'>
+<a href="/design-guide">Back to Design Guide</a>
+</div>
+  </section>
+  {% endblock %}
+
+</body>
+

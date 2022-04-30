@@ -425,6 +425,7 @@ form input{
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 5%;
+    margin-left: 70px;
     
 }
 
@@ -434,6 +435,7 @@ form input{
     font-size: 40px;
     text-align: center;
     font-family: elisavaresearch;
+    font-weight: normal;
 
 }
 
@@ -441,6 +443,38 @@ form input{
     display: block;
 }
 
+
+.edit{
+    margin-top: 40px;
+    text-decoration: underline;
+    margin-left: 165px;
+}
+
+.your_element{
+    width: 180px;
+    border: 1px solid rgb(255, 255, 255);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    
+}
+
+.your_element h3, .your_element p, .your_element a{
+    text-align: center;
+}
+
+.download{
+    width: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px;
+    margin-left: 32px;
+    
+}
+
+.download:hover{
+    background-color: aliceblue;
+    color:rgb(22, 43, 230)
+}
 
 @media screen and (max-width: 800px) {
         div.title{

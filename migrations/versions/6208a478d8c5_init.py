@@ -1,8 +1,8 @@
-"""empty message
+"""init
 
-Revision ID: 5b824ae5912f
+Revision ID: 6208a478d8c5
 Revises: 
-Create Date: 2022-04-26 20:17:14.617243
+Create Date: 2022-04-29 17:41:19.144906
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5b824ae5912f'
+revision = '6208a478d8c5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,9 +32,9 @@ def upgrade():
     )
     op.create_table('color',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('color1', sa.String(length=20), nullable=False),
-    sa.Column('color2', sa.String(length=20), nullable=False),
-    sa.Column('color3', sa.String(length=20), nullable=False),
+    sa.Column('color1', sa.String(length=20), nullable=True),
+    sa.Column('color2', sa.String(length=20), nullable=True),
+    sa.Column('color3', sa.String(length=20), nullable=True),
     sa.Column('color4', sa.String(length=20), nullable=True),
     sa.Column('color5', sa.String(length=20), nullable=True),
     sa.Column('color6', sa.String(length=20), nullable=True),
@@ -44,18 +44,17 @@ def upgrade():
     )
     op.create_table('font',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('buffer', sa.Text(), nullable=True),
-    sa.Column('name', sa.Text(), nullable=True),
-    sa.Column('mimetype', sa.Text(), nullable=True),
+    sa.Column('filename', sa.String(length=80), nullable=True),
+    sa.Column('data', sa.LargeBinary(), nullable=True),
     sa.Column('designguide_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['designguide_id'], ['designguide.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('keyword',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('keyword1', sa.String(length=80), nullable=False),
-    sa.Column('keyword2', sa.String(length=80), nullable=False),
-    sa.Column('keyword3', sa.String(length=80), nullable=False),
+    sa.Column('keyword1', sa.String(length=80), nullable=True),
+    sa.Column('keyword2', sa.String(length=80), nullable=True),
+    sa.Column('keyword3', sa.String(length=80), nullable=True),
     sa.Column('keyword4', sa.String(length=80), nullable=True),
     sa.Column('keyword5', sa.String(length=80), nullable=True),
     sa.Column('keyword6', sa.String(length=80), nullable=True),
@@ -65,9 +64,8 @@ def upgrade():
     )
     op.create_table('logo',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('buffer', sa.Text(), nullable=True),
-    sa.Column('name', sa.Text(), nullable=True),
-    sa.Column('mimetype', sa.Text(), nullable=True),
+    sa.Column('filename', sa.String(length=80), nullable=True),
+    sa.Column('data', sa.LargeBinary(), nullable=True),
     sa.Column('designguide_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['designguide_id'], ['designguide.id'], ),
     sa.PrimaryKeyConstraint('id')

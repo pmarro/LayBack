@@ -10,12 +10,12 @@ def test_element_update(client):
     db.session.commit() 
     
     # Act
-    element.name = 'Font'
+    element.name = 'Picture'
     element.save()
 
     # Assess
     updated_element = Designelement.query.filter_by(slug='logo').first()
-    assert updated_element.name == 'Font'
+    assert updated_element.name == 'Picture'
 
 
 def test_element_delete(client):
