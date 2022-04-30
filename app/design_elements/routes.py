@@ -1,5 +1,3 @@
-
-from turtle import update
 from flask import redirect, render_template, Blueprint, request, current_app, Response, send_file, url_for
 from app.design_guides.models import Designguide
 from .models import Designelement, Logo, Font, Color, Keyword
