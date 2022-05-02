@@ -63,10 +63,6 @@ Oh... And never forget to activate the Virtual enviroment before working on the 
 
 `deactivate`
 
-Now that you have all the packages installed you can run tests with pytest whenever you make changes to the project.
-
-`pytest -v`
-
 Another important step before working on the code is to define enviroment variables.
 First, create an .env file. 
 
@@ -87,6 +83,10 @@ Use https://randomkeygen.com/ to generate a SECRET_KEY if your feeling uninspire
 In order to ensure that you install the exact same versions of the packages that are being used in the project; use the command below.
 
 `python -m pip install -r requirements.txt`
+
+Now that you have all the packages installed you can run tests with pytest whenever you make changes to the project.
+
+`pytest -v`
 
 To set up the **database** run de following commands.
 
